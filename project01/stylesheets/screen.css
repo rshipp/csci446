@@ -3,9 +3,12 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 /* line 17, ../../../../../../../usr/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
+html, body, .body, h1, .header h1, .sidebar h1, .login, .sidebar, div, span, applet, object, iframe,
+h1,
+.header h1,
+.sidebar h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a,
+nav a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
@@ -65,4 +68,132 @@ a img {
 /* line 116, ../../../../../../../usr/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
+}
+
+@font-face {
+  font-family: 'cicle_gorditagordita';
+  src: url("Cicle_Gordita-webfont.eot");
+  src: url("Cicle_Gordita-webfont.eot?#iefix") format("embedded-opentype"), url("Cicle_Gordita-webfont.woff") format("woff"), url("Cicle_Gordita-webfont.ttf") format("truetype"), url("Cicle_Gordita-webfont.svg#cicle_gorditagordita") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* line 45, ../sass/screen.scss */
+a, nav a {
+  color: green;
+  text-decoration: underline;
+}
+
+/* line 50, ../sass/screen.scss */
+body, .body, h1, .header h1, .sidebar h1, .login, .sidebar {
+  font-family: "cicle_gorditagordita", sans-serif;
+  font-size: 1em;
+  font-weight: normal;
+  font-style: normal;
+  color: black;
+}
+
+/* line 55, ../sass/screen.scss */
+.body {
+  margin: 1em;
+}
+
+/* line 60, ../sass/screen.scss */
+h1, .header h1, .sidebar h1 {
+  font-size: 2em;
+  line-height: 200%;
+}
+
+/* line 70, ../sass/screen.scss */
+form {
+  margin: 0.5em;
+}
+/* line 73, ../sass/screen.scss */
+form .right {
+  margin: 0.5em;
+  float: right;
+  clear: both;
+}
+
+/* line 80, ../sass/screen.scss */
+footer {
+  font-family: "cicle_gorditagordita", sans-serif;
+  font-size: 1em;
+  font-weight: normal;
+  font-style: normal;
+  color: black;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 1em;
+  background: lightgrey;
+  text-align: center;
+}
+
+/* line 91, ../sass/screen.scss */
+.header {
+  background: lightgrey;
+}
+/* line 94, ../sass/screen.scss */
+.header h1 {
+  margin-left: 32px;
+}
+
+/* line 100, ../sass/screen.scss */
+nav {
+  font-family: "cicle_gorditagordita", sans-serif;
+  font-size: 1em;
+  font-weight: normal;
+  font-style: normal;
+  color: black;
+  height: 50px;
+}
+/* line 103, ../sass/screen.scss */
+nav li {
+  margin-left: 1em;
+  margin-right: 1em;
+  float: right;
+  display: inline;
+  background: white;
+  height: 1.5em;
+  width: 4em;
+  border-radius: 7px;
+  text-align: center;
+}
+/* line 116, ../sass/screen.scss */
+nav a {
+  line-height: 1.5em;
+}
+
+/* line 124, ../sass/screen.scss */
+.login {
+  display: inline-block;
+  float: right;
+  border: 1px solid;
+  margin: 0.5em;
+  clear: both;
+}
+
+/* line 133, ../sass/screen.scss */
+.sidebar {
+  width: 325px;
+  background: lightgrey;
+  float: right;
+  clear: both;
+  margin: 1em;
+}
+/* line 141, ../sass/screen.scss */
+.sidebar img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+/* line 147, ../sass/screen.scss */
+.sidebar li {
+  margin-left: 2em;
+  line-height: 200%;
+}
+/* line 152, ../sass/screen.scss */
+.sidebar h1 {
+  text-align: center;
 }

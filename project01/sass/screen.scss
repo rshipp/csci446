@@ -4,3 +4,153 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 @import "compass/reset";
+@import "cicle";
+
+// Set up variables.
+$body-font-family: 'cicle_gorditagordita', sans-serif;
+$body-font-color: #000;
+$body-font-size: 1em;
+$body-font-weight: normal;
+$body-font-style: normal;
+// Use an operator to compute the font size.
+$h1-font-size: 2*$body-font-size;
+$accent-color: lightgray;
+$footer-height: $body-font-size;
+$footer-color: $accent-color;
+$sidebar-width: 325px;
+$button-color: white;
+$button-height: 1.5em;
+$button-width: 4em;
+$button-rounding: 7px;
+$header-height: 50px;
+
+// Create a mixin.
+@mixin setupFonts(
+    $family:$body-font-family,
+    $color:$body-font-color,
+    $size:$body-font-size,
+    $weight:$body-font-weight,
+    $style:$body-font-style
+    ){
+        // Take advantage of SASS's nesting feature.
+        font: {
+            family: $family;
+            size: $size;
+            weight: $weight;
+            style: $style;
+        }
+        color: $color;
+}
+
+a {
+    color: green;
+    text-decoration: underline;
+}
+
+body {
+    // Use the mixin.
+    @include setupFonts;
+}
+
+.body {
+    @extend body;
+    margin: 1em;
+}
+
+h1 {
+    // Use inheritance.
+    @extend body;
+    // Use a variable directly.
+    font: {
+        size: $h1-font-size;
+    }
+    line-height: 200%;
+}
+
+form {
+    margin: 0.5em;
+
+    .right {
+        margin: 0.5em;
+        float: right;
+        clear: both;
+    }
+}
+
+footer {
+    // Use the mixin again, and some variables.
+    @include setupFonts;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: $footer-height;
+    background: $footer-color;
+    text-align: center;
+}
+
+.header {
+    background: $accent-color;
+
+    h1 {
+        @extend h1;
+        margin-left: 32px;
+    }
+}
+
+nav {
+    @include setupFonts;
+
+    li {
+        // More nesting.
+        margin-left: 1em;
+        margin-right: 1em;
+        float: right;
+        display: inline;
+        background: $button-color;
+        height: $button-height;
+        width: $button-width;
+        border-radius: $button-rounding;
+        text-align: center;
+    }
+
+    a {
+        @extend a;
+        line-height: $button-height;
+    }
+
+    height: $header-height;
+}
+
+.login {
+    @extend body;
+    display: inline-block;
+    float: right;
+    border: 1px solid;
+    margin: 0.5em;
+    clear: both;
+}
+
+.sidebar {
+    @extend body;
+    width: $sidebar-width;
+    background: $accent-color;
+    float: right;
+    clear: both;
+    margin: 1em;
+
+    img {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    li {
+        margin-left: 2em;
+        line-height: 200%;
+    }
+
+    h1 {
+        @extend h1;
+        text-align: center;
+    }
+}
