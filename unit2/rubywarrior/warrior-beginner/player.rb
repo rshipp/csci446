@@ -1,4 +1,6 @@
 # rubywarrior
+# Function: line 11, instance var: line 8, constants: line 6, array:
+# line 23, comments, everywhere. No hashes or class vars.
 # Used http://langref.org/ruby/lists/testing/any
 
 class Player
