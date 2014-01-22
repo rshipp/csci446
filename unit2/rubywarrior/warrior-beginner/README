@@ -1,19 +1,26 @@
-Level 3
+Level 7
 
-The air feels thicker than before. There must be a horde of sludge.
+You feel a wall right in front of you and an opening behind you.
 
-Tip: Be careful not to die! Use warrior.health to keep an eye on your health, and warrior.rest! to earn 10% of max health back.
+Tip: You are not as effective at attacking backward. Use warrior.feel.wall? and warrior.pivot! to turn around.
 
- ---------
-|@ s ss s>|
- ---------
+ ------
+|>a S @|
+ ------
 
   > = Stairs
   @ = warrior (20 HP)
-  s = Sludge (12 HP)
+  a = Archer (7 HP)
+  S = Thick Sludge (24 HP)
 
 
 Warrior Abilities:
+
+  warrior.pivot!
+    Rotate :left, :right or :backward (default)
+
+  warrior.rescue!
+    Rescue a captive from his chains (earning 20 points) in given direction (forward by default).
 
   warrior.health
     Returns an integer representing your health.
