@@ -3,11 +3,12 @@
 
 class Player
   MAX_HEALTH = 20
-  @health ||= MAX_HEALTH
-  @needsrest ||= false
-  @forward ||= false
+  @health = MAX_HEALTH
+  @needsrest = false
+  @forward = false
     
   def play_turn(warrior)
+    @health ||= MAX_HEALTH
     # Check health, reset needsrest if necessary.
     if warrior.health == MAX_HEALTH
       @needsrest = false
@@ -21,6 +22,8 @@ class Player
         warrior.walk! :backward
     elsif warrior.feel(:backward).captive?
         warrior.rescue! :backward
+    elsif warrior.look(:backward).any? { |space| space.enemy? }
+        warrior.shoot! :backward
     # Scout ahead.
     elsif warrior.look.any? { |space| space.enemy? }
         warrior.shoot!
