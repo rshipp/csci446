@@ -1,8 +1,8 @@
 class Pet < ActiveRecord::Base
-  has_one :line_items
+  has_one :line_item
   before_destroy :ensure_not_referenced_by_any_line_item
 
-  def ensure_not_referenced_by_any_liine_item
+  def ensure_not_referenced_by_any_line_item
     if line_items.count.zero?
       return true
     else
