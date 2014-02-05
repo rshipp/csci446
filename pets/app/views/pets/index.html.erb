@@ -1,4 +1,4 @@
-<h1>Listing pets</h1>
+<h1>Available for Adoption</h1>
 
 <table>
   <thead>
@@ -20,7 +20,7 @@
       <tr>
         <td><%= pet.name %></td>
         <td><%= pet.breed %></td>
-        <td><%= pet.image_url %></td>
+        <td><%= image_tag(pet.image_url, :class => 'list_image') %></td>
         <td><%= pet.age %></td>
         <td><%= pet.shots %></td>
         <td><%= pet.notes %></td>
