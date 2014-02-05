@@ -24,7 +24,9 @@ class LineItemsController < ApplicationController
   # POST /line_items
   # POST /line_items.json
   def create
-    @line_item = LineItem.new(line_item_params)
+    pet = Pet.find(params[:pet_id])
+#    @line_item = LineItem.new(line_item_params, :pet => pet)
+    @line_item = pet.line_items.build(:pet => pet)
 
     respond_to do |format|
       if @line_item.save
