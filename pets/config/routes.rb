@@ -1,4 +1,6 @@
 Pets::Application.routes.draw do
+  resources :line_items
+
   get "adopt/index"
   resources :pets
 

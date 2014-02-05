@@ -1,6 +1,4 @@
 class Pet < ActiveRecord::Base
-  default_scope :order => 'name'
-
   validates :name, :breed, :image_url, :notes, :presence => true
   validates :age, :numericality => {:greater_than_or_equal_to => 1}
   validates :name, :uniqueness => true
