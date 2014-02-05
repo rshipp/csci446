@@ -7,8 +7,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div id="banner">
+    <%= image_tag("logo.png") %>
+    <%= @page_title || "Adopt a Pet" %>
+  </div>
+  <div id="columns">
+    <div id="side">
+      <a href="/">Home</a><br>
+      <a href="/pets">Pets</a><br>
+    </div>
+    <div id="main">
+      <%= yield %>
+    </div>
+  </div>
 </body>
 </html>
