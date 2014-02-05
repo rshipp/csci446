@@ -1,0 +1,16 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<h1>Pets to Adopt</h1>
+
+<% @pets.each do |pet| %>
+  <div class="entry">
+    <%= image_tag(pet.image_url) %>
+    <h3><%= pet.name %></h3>
+    <p>Breed: <%= pet.breed %></p>
+    <p>Age (years): <%= pet.age %></p>
+    <p>Shots up to date: <%= pet.shots %></p>
+    <p>Notes: <%= sanitize(pet.notes) %></p>
+  </div>
+<% end %>
