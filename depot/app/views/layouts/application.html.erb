@@ -1,11 +1,16 @@
+<!-- START:head -->
 <!DOCTYPE html>
 <html>
 <head>
   <title>Depot</title>
+<!-- START_HIGHLIGHT -->
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+<!-- END_HIGHLIGHT -->
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
 </head>
+<!-- END:head -->
 <body>
 
 <%= yield %>
