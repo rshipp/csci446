@@ -1,9 +1,9 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  product_id: 1
-  card_id: 1
+  product_id: 
+  cart_id: 
 
 two:
-  product_id: 1
-  card_id: 1
+  product_id: 
+  cart_id: 
