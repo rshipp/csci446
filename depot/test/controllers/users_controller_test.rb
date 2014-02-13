@@ -1,3 +1,11 @@
+#---
+# Excerpted from "Agile Web Development with Rails",
+# published by The Pragmatic Bookshelf.
+# Copyrights apply to this code. It may not be used to create training material, 
+# courses, books, articles, and the like. Contact us if you are in doubt.
+# We make no guarantees that this code is fit for any purpose. 
+# Visit http://www.pragmaticprogrammer.com/titles/rails4 for more book information.
+#---
 require 'test_helper'
 
 class UsersControllerTest < ActionController::TestCase
@@ -18,10 +26,11 @@ class UsersControllerTest < ActionController::TestCase
 
   test "should create user" do
     assert_difference('User.count') do
-      post :create, user: { name: @user.name, password_digest: @user.password_digest }
+      post :create, user: { name: 'sam', password: 'secret',
+        password_confirmation: 'secret' }
     end
 
-    assert_redirected_to user_path(assigns(:user))
+    assert_redirected_to users_path
   end
 
   test "should show user" do
@@ -35,8 +44,9 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "should update user" do
-    patch :update, id: @user, user: { name: @user.name, password_digest: @user.password_digest }
-    assert_redirected_to user_path(assigns(:user))
+    patch :update, id: @user, user: { name: @user.name, password: 'secret',
+        password_confirmation: 'secret' }
+    assert_redirected_to users_path
   end
 
   test "should destroy user" do
