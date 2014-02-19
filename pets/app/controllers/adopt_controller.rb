@@ -1,5 +1,8 @@
 class AdoptController < ApplicationController
+  include CurrentPetList
+  before_action :set_pet_list
   helper_method :sort_column, :sort_direction
+
   def index
     @pets = Pet.order(sort_column + " " + sort_direction)
   end

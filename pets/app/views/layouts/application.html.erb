@@ -15,7 +15,11 @@
     <div id="side">
       <a href="/">Home</a><br>
       <a href="/pets">Pets</a><br>
+      <div id="list">
+        <%= render @pet_list %>
+      </div>
     </div>
+
     <div id="main">
       <%= yield %>
     </div>

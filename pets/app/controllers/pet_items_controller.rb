@@ -1,6 +1,6 @@
 class PetItemsController < ApplicationController
   include CurrentPetList
-  before_action :set_pet_list, only: [:create]
+  before_action :set_pet_list, only: [:create, :show]
   before_action :set_pet_item, only: [:show, :edit, :update, :destroy]
 
   # GET /pet_items

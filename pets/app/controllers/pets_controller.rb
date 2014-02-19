@@ -1,5 +1,7 @@
 class PetsController < ApplicationController
+  include CurrentPetList
   before_action :set_pet, only: [:show, :edit, :update, :destroy]
+  before_action :set_pet_list, only: [:create, :show, :edit, :update, :destroy]
 
   # GET /pets
   # GET /pets.json

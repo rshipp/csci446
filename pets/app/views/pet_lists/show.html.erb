@@ -1,13 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<h2>Your Pet List</h2>
-<ul>
-    <% @pet_list.pet_items.each do |pet| %>
-        <li><%= pet.pet.name %></li>
-    <% end %>
-</ul>
-
-<%= button_to 'Remove all pets from list', @pet_list, method: :delete, 
-    data: { confirm: 'Are you sure?' } %>
+<%= render @pet_list %>
 <%= link_to 'Edit', edit_pet_list_path(@pet_list) %> |
 <%= link_to 'Back', pet_lists_path %>

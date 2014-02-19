@@ -99,6 +99,19 @@
   padding-bottom: 1em;
   width: 16em;
   background: #111;
+
+  form, div {
+    display: inline;
+  }
+
+  input {
+    font-size: small;
+  }
+
+  #pet_list {
+    font-size: smaller;
+    color: white;
+  }
 }
 
 #side a {
