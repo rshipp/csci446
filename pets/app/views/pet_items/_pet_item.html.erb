@@ -1,5 +1,5 @@
 <% if pet_item == @current_item %>
     <li id="current_item"><%= pet_item.pet.name %>
 <% else %>
-    <li><%= pet_item.pet.name %>
+    <li><%= link_to pet_item.pet.name, pet_item.pet %>
 <% end %>

@@ -1,7 +1,9 @@
 class Pet < ActiveRecord::Base
   has_many :pet_items
+  has_one :foster_pet
 
   before_destroy :ensure_not_referenced_by_any_pet_item
+  #before_destroy :ensure_not_referenced_by_any_foster_pet
 
   private
 

@@ -1,5 +1,6 @@
 class FosterPetsController < ApplicationController
   before_action :set_foster_pet, only: [:show, :edit, :update, :destroy]
+  rescue_from ActiveRecord::RecordNotFound, with: :invalid_pet_id
 
   # GET /foster_pets
   # GET /foster_pets.json
@@ -24,7 +25,8 @@ class FosterPetsController < ApplicationController
   # POST /foster_pets
   # POST /foster_pets.json
   def create
-    @foster_pet = FosterPet.new(foster_pet_params)
+    pet = Pet.find(params[:pet_id])
+    @foster_pet = FosterPet.new(pet: pet)
 
     respond_to do |format|
       if @foster_pet.save
@@ -70,5 +72,10 @@ class FosterPetsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def foster_pet_params
       params.require(:foster_pet).permit(:pet_id)
+    end
+
+    def invalid_pet_id
+      logger.error "Attempt to access invalid pet id #{params[:id]}"
+      redirect_to adopt_url, notice: 'Invalid pet id'
     end
 end
