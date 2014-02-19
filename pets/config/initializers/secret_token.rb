@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Pets::Application.config.secret_key_base = 'f3c513ba400512af700e4114598a67c1ae7ddfb2c1dd2721a0a348b9dc22ca7245153228ee2e3f370629576921e9a9299af52cf7887c439ecd23fc2de2dcec49'
+Pets::Application.config.secret_key_base = 'bcbb20fac9b932b25e6054f67e6fcb6d045a04302c1b1949ac738eba5c528eebb38f1faeb0041bd33cb4dc992affff93e60b77875274bb0a47a3f36bf0365228'

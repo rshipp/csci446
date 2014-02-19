@@ -1,18 +1,11 @@
 Pets::Application.routes.draw do
-  resources :pet_items
-
-  resources :pet_lists
-
-  resources :line_items
-
-  get "adopt/index"
   resources :pets
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root :to => 'adopt#index', :as => 'adopt'
+  # root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

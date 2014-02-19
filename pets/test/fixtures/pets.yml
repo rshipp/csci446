@@ -3,15 +3,15 @@
 one:
   name: MyString
   breed: MyString
-  image_url: MyString.png
   age: 1
   shots: false
-  notes: MyString
+  notes: MyText
+  image_url: MyString
 
 two:
-  name: MyString2
+  name: MyString
   breed: MyString
-  image_url: MyString.gif
   age: 1
   shots: false
-  notes: MyString
+  notes: MyText
+  image_url: MyString
