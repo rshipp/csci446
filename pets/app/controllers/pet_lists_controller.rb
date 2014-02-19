@@ -1,5 +1,6 @@
 class PetListsController < ApplicationController
   before_action :set_pet_list, only: [:show, :edit, :update, :destroy]
+  rescue_from ActiveRecord::RecordNotFound, with: :invalid_pet_list
 
   # GET /pet_lists
   # GET /pet_lists.json
@@ -54,9 +55,10 @@ class PetListsController < ApplicationController
   # DELETE /pet_lists/1
   # DELETE /pet_lists/1.json
   def destroy
-    @pet_list.destroy
+    @pet_list.destroy if @pet_list.id == session[:pet_list_id]
+    session[:pet_list_id] = nil
     respond_to do |format|
-      format.html { redirect_to pet_lists_url }
+      format.html { redirect_to adopt_url, notice: 'Your list of pets is currently empty' }
       format.json { head :no_content }
     end
   end
@@ -70,5 +72,10 @@ class PetListsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def pet_list_params
       params[:pet_list]
+    end
+
+    def invalid_pet_list
+      logger.error "Attempt to access invalid pet list #{params[:id]}"
+      redirect_to adopt_url, notice: 'Invalid pets list'
     end
 end

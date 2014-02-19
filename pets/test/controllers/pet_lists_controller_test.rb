@@ -41,9 +41,10 @@ class PetListsControllerTest < ActionController::TestCase
 
   test "should destroy pet_list" do
     assert_difference('PetList.count', -1) do
+      session[:pet_list_id] = @pet_list.id
       delete :destroy, id: @pet_list
     end
 
-    assert_redirected_to pet_lists_path
+    assert_redirected_to adopt_path
   end
 end

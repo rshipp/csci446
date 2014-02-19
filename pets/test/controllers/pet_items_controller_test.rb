@@ -36,7 +36,7 @@ class PetItemsControllerTest < ActionController::TestCase
   end
 
   test "should update pet_item" do
-    patch :update, id: @pet_item, pet_item: { pet_id: @pet_item.pet_id, pet_list_id: @pet_item.pet_list_id }
+    patch :update, id: @pet_item, pet_item: { pet_id: @pet_item.pet_id }
     assert_redirected_to pet_item_path(assigns(:pet_item))
   end
 

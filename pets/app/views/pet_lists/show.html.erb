@@ -7,5 +7,7 @@
     <% end %>
 </ul>
 
+<%= button_to 'Remove all pets from list', @pet_list, method: :delete, 
+    data: { confirm: 'Are you sure?' } %>
 <%= link_to 'Edit', edit_pet_list_path(@pet_list) %> |
 <%= link_to 'Back', pet_lists_path %>

@@ -31,7 +31,7 @@ class PetItemsController < ApplicationController
 
     respond_to do |format|
       if @pet_item.save
-        format.html { redirect_to @pet_item.pet_list, notice: 'Pet item was successfully created.' }
+        format.html { redirect_to @pet_item.pet_list }
         format.json { render action: 'show', status: :created, location: @pet_item }
       else
         format.html { render action: 'new' }
@@ -72,6 +72,6 @@ class PetItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pet_item_params
-      params.require(:pet_item).permit(:pet_id, :pet_list_id)
+      params.require(:pet_item).permit(:pet_id)
     end
 end
