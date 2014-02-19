@@ -29,6 +29,11 @@
   <%= @pet.notes %>
 </p>
 
+<p>
+  <strong>Status:</strong>
+  <%= @pet.status %>
+</p>
+
 <%= button_to 'Add to list', pet_items_path(pet_id: @pet), remote: true %>
 <%= link_to 'Edit', edit_pet_path(@pet) %> |
 <%= link_to 'Back', pets_path %>

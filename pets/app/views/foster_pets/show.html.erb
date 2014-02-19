@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pet:</strong>
+  <%= @foster_pet.pet %>
+</p>
+
+<%= link_to 'Edit', edit_foster_pet_path(@foster_pet) %> |
+<%= link_to 'Back', foster_pets_path %>
