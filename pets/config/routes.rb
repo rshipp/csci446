@@ -1,4 +1,6 @@
 Pets::Application.routes.draw do
+  resources :pet_items
+
   resources :pet_lists
 
   resources :line_items

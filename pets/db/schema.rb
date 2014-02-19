@@ -11,17 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140219100527) do
-
-  create_table "carts", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "consideration_lists", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 20140219100853) do
 
   create_table "line_items", force: true do |t|
     t.integer  "pet_id"
@@ -31,10 +21,13 @@ ActiveRecord::Schema.define(version: 20140219100527) do
 
   create_table "pet_items", force: true do |t|
     t.integer  "pet_id"
-    t.integer  "consideration_list_id"
+    t.integer  "pet_list_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "pet_items", ["pet_id"], name: "index_pet_items_on_pet_id"
+  add_index "pet_items", ["pet_list_id"], name: "index_pet_items_on_pet_list_id"
 
   create_table "pet_lists", force: true do |t|
     t.datetime "created_at"
@@ -44,12 +37,12 @@ ActiveRecord::Schema.define(version: 20140219100527) do
   create_table "pets", force: true do |t|
     t.string   "name"
     t.string   "breed"
+    t.string   "image_url"
     t.integer  "age"
     t.boolean  "shots"
-    t.string   "notes"
+    t.text     "notes"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image_url"
   end
 
 end

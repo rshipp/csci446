@@ -29,6 +29,7 @@
   <%= @pet.notes %>
 </p>
 
+<%= button_to 'Add to list', pet_items_path(:pet_id => @pet) %>
 <%= button_to 'Adopt', line_items_path(:pet => @pet) %>
 <%= link_to 'Edit', edit_pet_path(@pet) %> |
 <%= link_to 'Back', pets_path %>

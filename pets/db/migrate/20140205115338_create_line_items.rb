@@ -1,7 +1,7 @@
 class CreateLineItems < ActiveRecord::Migration
   def change
     create_table :line_items do |t|
-      t.Pet :pet
+      t.integer :pet_id
 
       t.timestamps
     end
