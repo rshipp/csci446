@@ -1,0 +1,22 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<h1>Pets to Adopt</h1>
+
+<table>
+    <tr>
+        <th><%= sortable "name" %></th>
+        <th><%= sortable "breed" %></th>
+        <th><%= sortable "age", "Age (years)" %></th>
+        <th><%= sortable "shots", "Shots up to date" %></th>
+    </tr>
+    <% @pets.each do |pet| %>
+    <tr>
+        <td><%= link_to pet.name, pet %></td>
+        <td><%= pet.breed %></td>
+        <td><%= pet.age %></td>
+        <td><%= pet.shots %></td>
+    </tr>
+    <% end %>
+</table>
