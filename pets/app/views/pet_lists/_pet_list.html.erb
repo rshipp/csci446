@@ -1,4 +1,3 @@
-<% if pet_list.pet_items.length > 0 %>
 <h2>Your Pet List</h2>
   <ul>
     <%= render(pet_list.pet_items) %>
@@ -6,4 +5,3 @@
 
     <%= button_to 'Remove all pets from list', pet_list, method: :delete,
         data: { confirm: 'Are you sure?' } %>
-<% end %>

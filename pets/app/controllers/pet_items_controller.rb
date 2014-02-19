@@ -32,6 +32,7 @@ class PetItemsController < ApplicationController
     respond_to do |format|
       if @pet_item.save
         format.html { redirect_to @pet_item.pet_list }
+        format.js   { @current_item = @pet_item }
         format.json { render action: 'show', status: :created, location: @pet_item }
       else
         format.html { render action: 'new' }

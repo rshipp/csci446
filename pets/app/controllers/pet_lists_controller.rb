@@ -58,7 +58,7 @@ class PetListsController < ApplicationController
     @pet_list.destroy if @pet_list.id == session[:pet_list_id]
     session[:pet_list_id] = nil
     respond_to do |format|
-      format.html { redirect_to adopt_url, notice: 'Your list of pets is currently empty' }
+      format.html { redirect_to adopt_url } 
       format.json { head :no_content }
     end
   end
