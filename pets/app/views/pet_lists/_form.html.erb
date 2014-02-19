@@ -1,0 +1,17 @@
+<%= form_for(@pet_list) do |f| %>
+  <% if @pet_list.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pet_list.errors.count, "error") %> prohibited this pet_list from being saved:</h2>
+
+      <ul>
+      <% @pet_list.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

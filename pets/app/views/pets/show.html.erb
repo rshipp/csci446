@@ -6,6 +6,10 @@
 </p>
 
 <p>
+    <%= image_tag(@pet.image_url) %>
+</p>
+
+<p>
   <strong>Breed:</strong>
   <%= @pet.breed %>
 </p>
@@ -25,10 +29,6 @@
   <%= @pet.notes %>
 </p>
 
-<p>
-  <strong>Image url:</strong>
-  <%= @pet.image_url %>
-</p>
-
+<%= button_to 'Add to list', pet_items_path(pet_id: @pet) %>
 <%= link_to 'Edit', edit_pet_path(@pet) %> |
 <%= link_to 'Back', pets_path %>
