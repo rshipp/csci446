@@ -15,8 +15,10 @@
     <div id="side">
       <a href="/">Home</a><br>
       <a href="/pets">Pets</a><br>
-      <%= hidden_div_if(@pet_list.pet_items.empty?, id: 'list') do %>
+      <% if @pet_list %>
+        <%= hidden_div_if(@pet_list.pet_items.empty?, id: 'list') do %>
           <%= render @pet_list %>
+        <% end %>
       <% end %>
       </div>
     </div>

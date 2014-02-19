@@ -22,6 +22,7 @@ class PetItemsControllerTest < ActionController::TestCase
       post :create, pet_id: pets(:one).id
     end
 
+    #assert_redirected_to adopt_path
     assert_redirected_to pet_list_path(assigns(:pet_item).pet_list)
   end
 
