@@ -1,6 +1,6 @@
 /* Global styles */
 
-#store #notice {
+#adopt #notice {
         color: #000;
         border: 2px solid red;
         padding: 1em;
@@ -10,7 +10,7 @@
 }
 
 
-#store h1 {
+#adopt h1 {
         font:  150% sans-serif;
         color: #222;
         border-bottom: 3px dotted #77d;
@@ -107,20 +107,20 @@
 }
 /* END:mainlayout */
 
-/* An entry in the store catalog */
+/* An entry in the adopt catalog */
 
-#store  .entry {
+#adopt  .entry {
   overflow: auto;
   margin-top: 1em;
   border-bottom: 1px dotted #77d;
 }
 
-#store  .title {
+#adopt  .title {
   font-size: 120%;
   font-family: sans-serif;
 }
 
-#store .entry img {
+#adopt .entry img {
   width: 80px;
   margin-right: 5px;
   margin-bottom: 5px;
@@ -128,27 +128,27 @@
 }
 
 
-#store .entry h3 {
+#adopt .entry h3 {
  margin-top: 0;
  margin-bottom: 2px;
  color: #222;
 }
 
-#store .entry p {
+#adopt .entry p {
  margin-top: 0.5em; 
  margin-bottom: 0.8em; 
 }
 
-#store .entry .price_line {
+#adopt .entry .price_line {
  clear: both;
  margin-bottom: 0.5em;
 }
 
-#store .entry .add_to_cart {
+#adopt .entry .add_to_cart {
   position: relative;
 }
 
-#store .entry  .price {
+#adopt .entry  .price {
   color: #444;
   font-weight: bold;
   margin-right: 2em;
