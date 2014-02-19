@@ -1,0 +1,33 @@
+<h1>Listing foster_parents</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Email</th>
+      <th>Pet</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @foster_parents.each do |foster_parent| %>
+      <tr>
+        <td><%= foster_parent.name %></td>
+        <td><%= foster_parent.address %></td>
+        <td><%= foster_parent.email %></td>
+        <td><%= foster_parent.pet_id %></td>
+        <td><%= link_to 'Show', foster_parent %></td>
+        <td><%= link_to 'Edit', edit_foster_parent_path(foster_parent) %></td>
+        <td><%= link_to 'Destroy', foster_parent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Foster parent', new_foster_parent_path %>

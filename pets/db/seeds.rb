@@ -11,6 +11,7 @@ Pet.create(:name => 'Abe',
   :image_url => 'abe.jpg',
   :age => 1,
   :shots => true,
+  :status => "Available",
   :notes => "None")
 
 Pet.create(:name => 'Ben',
@@ -18,6 +19,7 @@ Pet.create(:name => 'Ben',
   :image_url => 'ben.jpg',
   :age => 4,
   :shots => true,
+  :status => "Available",
   :notes => "Has hair.")
 
 Pet.create(:name => 'Ena',
@@ -25,6 +27,7 @@ Pet.create(:name => 'Ena',
   :image_url => 'ena.jpg',
   :age => 3,
   :shots => true,
+  :status => "Available",
   :notes => "Notes.")
 
 Pet.create(:name => 'Nat',
@@ -32,4 +35,5 @@ Pet.create(:name => 'Nat',
   :image_url => 'nat.jpg',
   :age => 9,
   :shots => false,
+  :status => "Available",
   :notes => "A pig.")

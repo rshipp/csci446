@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @foster_parent.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @foster_parent.address %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @foster_parent.email %>
+</p>
+
+<p>
+  <strong>Pet:</strong>
+  <%= @foster_parent.pet_id %>
+</p>
+
+<%= link_to 'Edit', edit_foster_parent_path(@foster_parent) %> |
+<%= link_to 'Back', foster_parents_path %>

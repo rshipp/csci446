@@ -1,4 +1,6 @@
 Pets::Application.routes.draw do
+  resources :foster_parents
+
   resources :pet_items
 
   resources :pet_lists

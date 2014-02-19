@@ -11,13 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140219111946) do
+ActiveRecord::Schema.define(version: 20140219140525) do
+
+  create_table "foster_parents", force: true do |t|
+    t.string   "name"
+    t.text     "address"
+    t.string   "email"
+    t.integer  "pet_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "pet_items", force: true do |t|
     t.integer  "pet_id"
     t.integer  "pet_list_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "status"
   end
 
   add_index "pet_items", ["pet_id"], name: "index_pet_items_on_pet_id"
@@ -37,6 +47,7 @@ ActiveRecord::Schema.define(version: 20140219111946) do
     t.string   "image_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "status"
   end
 
 end
