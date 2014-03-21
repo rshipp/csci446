@@ -6,4 +6,5 @@ class Book
   property :author, String
   property :language, String
   property :published, Integer
+  property :sold, String
 end
