@@ -4,6 +4,9 @@ require 'rack'
 require 'csv'
 require 'erb'
 require 'sqlite3'
+require 'data_mapper'
+require 'sinatra'
+require_relative 'book'
 
 class BooksApp
   attr_accessor :options
