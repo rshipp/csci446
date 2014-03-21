@@ -2,21 +2,13 @@
 
 require 'rack'
 require 'csv'
-require 'ERB'
+require 'erb'
 require 'sqlite3'
 
 class BooksApp
   def initialize
     # Set up variables that will be needed later.
-    @books = []
-    f = File.open("books.csv", "r")
-    f.each do |line|
-      l = []
-      (CSV.parse_line line).each do |row|
-        l.push row.strip
-      end
-      @books.push l
-    end
+    @db = SQLite3::Database.new "books.sqlite3.db"
     @options = ['title', 'author', 'language', 'year']
   end
 
@@ -84,9 +76,9 @@ class BooksApp
       page.push "\t\t<th>Copies</th>"
       page.push "\t</tr>"
 
-      (@books.sort_by { |e| e[@options.index sort] }).each do |book|
+      books = @db.execute("select * from books")
+      (books.sort_by { |e| e[(@options.index sort)+1] }).each do |book|
         page.push "\t<tr>"
-        page.push "\t\t<td>#{(@books.index book) + 1}</td>"
         book.each do |field|
           page.push "\t\t<td>#{field}</td>"
         end
