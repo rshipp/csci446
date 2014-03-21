@@ -6,7 +6,7 @@
 	</head>
 	<body>
 		<h1>Top 50 Best-Selling Books of All Time</h1>
-		<%= erb page.to_sym, locals: {options: options, books: books, sort: sort} %>
+        <%= yield %>
 		<footer>Brought to you by: footer</footer>
 	</body>
 </html>

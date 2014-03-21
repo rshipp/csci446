@@ -11,14 +11,14 @@ Book.all.each { |book| books.push [book.id, book.title, book.author, book.langua
 options = ['rank', 'title', 'author', 'language', 'year']
 
 get '/form' do
-  erb :base, locals: {page: 'form', options: options, books: nil, sort: nil}
+  erb :form, locals: {options: options, books: nil, sort: nil}
 end
 
 get '/list' do
   sort = request.GET["sort"]
   if options.include? sort
     books = books.sort_by { |e| e[options.index sort] }
-    return erb :base, locals: {page: 'list', options: options, books: books, sort: sort}
+    return erb :list, locals: {options: options, books: books, sort: sort}
   else
     return "Parameter sort=#{sort} is not allowed.\n"
   end
