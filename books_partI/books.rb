@@ -12,7 +12,7 @@ class BooksApp
   def initialize
     # Set up variables that will be needed later.
     @db = SQLite3::Database.new "books.sqlite3.db"
-    @options = ['title', 'author', 'language', 'year']
+    @options = ['rank', 'title', 'author', 'language', 'year']
   end
 
   def call env
@@ -57,7 +57,7 @@ class BooksApp
       template = File.open('list.html.erb', 'r').read
       books = []
       table = @db.execute("select * from books")
-      (table.sort_by { |e| e[(@options.index sort)+1] }).each do |book|
+      (table.sort_by { |e| e[@options.index sort] }).each do |book|
         col = []
         book.each do |field|
           col.push field
