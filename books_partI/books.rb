@@ -53,36 +53,20 @@ class BooksApp
   # /list
   def render_list req, response
     sort = req.GET["sort"]
-    page = []
-
     if @options.include? sort
-      page.push "<h2>Sorted by #{sort}</h2>"
-      page.push "<table cellborder=1>"
-      page.push "\t<tr>"
-      page.push "\t\t<th>Rank</th>"
-      page.push "\t\t<th>Title</th>"
-      page.push "\t\t<th>Author</th>"
-      page.push "\t\t<th>Language</th>"
-      page.push "\t\t<th>Year</th>"
-      page.push "\t\t<th>Copies</th>"
-      page.push "\t</tr>"
-
-      books = @db.execute("select * from books")
-      (books.sort_by { |e| e[(@options.index sort)+1] }).each do |book|
-        page.push "\t<tr>"
+      template = File.open('list.html.erb', 'r').read
+      books = []
+      table = @db.execute("select * from books")
+      (table.sort_by { |e| e[(@options.index sort)+1] }).each do |book|
+        col = []
         book.each do |field|
-          page.push "\t\t<td>#{field}</td>"
+          col.push field
         end
-        page.push "\t</tr>"
+        books.push col
       end
-
-      page.push "</table>"
+      response.write(ERB.new(template).result binding)
     else
-      page.push "Parameter sort=#{sort} is not allowed."
-    end
-
-    page.each do |line|
-      response.write "\t\t" + line + "\n"
+      response.write "\t\tParameter sort=#{sort} is not allowed.\n"
     end
   end
 end
