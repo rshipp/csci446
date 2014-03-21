@@ -14,8 +14,8 @@ get '/form' do
   erb :form, locals: {options: options, books: nil, sort: nil}
 end
 
-get '/list' do
-  sort = request.GET["sort"]
+post '/list' do
+  sort = request.POST["sort"]
   if options.include? sort
     books = books.sort_by { |e| e[options.index sort] }
     return erb :list, locals: {options: options, books: books, sort: sort}
