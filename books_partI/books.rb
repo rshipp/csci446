@@ -6,6 +6,9 @@ require 'erb'
 require 'sqlite3'
 
 class BooksApp
+  attr_accessor :options
+  include ERB::Util
+
   def initialize
     # Set up variables that will be needed later.
     @db = SQLite3::Database.new "books.sqlite3.db"
@@ -43,20 +46,8 @@ class BooksApp
 
   # /form
   def render_form req, response
-    page = []
-
-    page.push "<form method='GET' action='/list'>"
-    page.push "\t<select name='sort'>"
-    @options.each do |option|
-      page.push "\t\t<option>#{option}</option>"
-    end
-    page.push "\t</select>"
-    page.push "\t<button type='submit'>Display List</button>"
-    page.push "</form>"
-
-    page.each do |line|
-      response.write "\t\t" + line + "\n"
-    end
+    template = File.open('form.html.erb', 'r').read
+    response.write(ERB.new(template).result binding)
   end
 
   # /list
