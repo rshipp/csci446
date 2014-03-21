@@ -1,0 +1,18 @@
+		<h2>Sorted by <%= sort %></h2>
+		<table cellborder=1>
+			<tr>
+				<th>Rank</th>
+				<th>Title</th>
+				<th>Author</th>
+				<th>Language</th>
+				<th>Year</th>
+				<th>Copies</th>
+            </tr>
+			<% for book in books %>
+			<tr>
+				<% for field in book %>
+                <td><%= field %></td>
+				<% end %>
+            </tr>
+	        <% end %>
+		</table>
