@@ -35,7 +35,6 @@ ActiveRecord::Schema.define(version: 20140219141540) do
     t.integer  "pet_list_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "status"
   end
 
   add_index "pet_items", ["pet_id"], name: "index_pet_items_on_pet_id"
