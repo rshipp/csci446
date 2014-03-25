@@ -9,7 +9,8 @@ class PetsControllerTest < ActionController::TestCase
       breed: 'cat',
       image_url: 'test.jpg',
       age: 2,
-      shots: true
+      shots: true,
+      status: 'Available'
     }
   end
 

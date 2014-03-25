@@ -17,7 +17,8 @@ class PetTest < ActiveSupport::TestCase
                   :breed => 'two',
                   :image_url => 'a.png',
                   :shots => true,
-                  :notes => 'some')
+                  :notes => 'some',
+                  :status => 'Available')
     pet.age = -1
     assert pet.invalid?
     assert_equal "must be greater than or equal to 1", pet.errors[:age].join('; ')
@@ -36,7 +37,8 @@ class PetTest < ActiveSupport::TestCase
             :image_url => image_url,
             :age => 1,
             :shots => true,
-            :notes => 'some')
+            :notes => 'some',
+            :status => 'Available')
   end
 
   test "image url" do

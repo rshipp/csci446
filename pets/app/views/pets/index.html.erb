@@ -18,18 +18,20 @@
 
   <tbody>
     <% @pets.each do |pet| %>
-      <tr>
-        <td><%= pet.name %></td>
-        <td><%= pet.breed %></td>
-        <td><%= image_tag(pet.image_url, :class => 'list_image') %></td>
-        <td><%= pet.age %></td>
-        <td><%= pet.shots %></td>
-        <td><%= pet.notes %></td>
-        <td><%= link_to 'Show', pet %></td>
-        <td><%= link_to 'Edit', edit_pet_path(pet) %></td>
-        <td><%= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= button_to 'Add to list', pet_items_path(pet_id: pet), remote: true %></td>
-      </tr>
+      <% if pet.status == "Available" %>
+        <tr>
+          <td><%= pet.name %></td>
+          <td><%= pet.breed %></td>
+          <td><%= image_tag(pet.image_url, :class => 'list_image') %></td>
+          <td><%= pet.age %></td>
+          <td><%= pet.shots %></td>
+          <td><%= pet.notes %></td>
+          <td><%= link_to 'Show', pet %></td>
+          <td><%= link_to 'Edit', edit_pet_path(pet) %></td>
+          <td><%= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= button_to 'Add to list', pet_items_path(pet_id: pet), remote: true %></td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>

@@ -1,6 +1,8 @@
 class Pet < ActiveRecord::Base
   has_many :pet_items
   has_one :foster_pet
+  
+  STATUS_OPTIONS = [ "Available", "Fostered" ]
 
   before_destroy :ensure_not_referenced_by_any_pet_item
   #before_destroy :ensure_not_referenced_by_any_foster_pet
@@ -22,6 +24,10 @@ class Pet < ActiveRecord::Base
   validates :image_url, allow_blank: true, format: {
     with: %r{\.(gif|jpg|png)\Z}i,
     message: 'must be a URL for GIF, JPG or PNG image.'
+  }
+  validates :status, allow_blank: false, format: {
+    with: /\A(Available|Fostered)\Z/,
+    message: 'must be "Available" or "Fostered".'
   }
 
   def self.latest

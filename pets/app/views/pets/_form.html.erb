@@ -35,6 +35,10 @@
     <%= f.label :notes %><br>
     <%= f.text_area :notes, :rows => 6 %>
   </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.select :status, Pet::STATUS_OPTIONS, prompt: 'Select a status' %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
