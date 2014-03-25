@@ -26,8 +26,8 @@ class PetItemsController < ApplicationController
   # POST /pet_items
   # POST /pet_items.json
   def create
-    pet = Pet.find(params[:pet_item][:pet_id])
-    @pet_item = @pet_list.add_pet(pet.id) #pet_items.build(pet: pet) #PetItem.new(pet_item_params)
+    pet = Pet.find(pet_item_params[:pet_id])
+    @pet_item = @pet_list.add_pet(pet.id)
 
     respond_to do |format|
       if @pet_item.save

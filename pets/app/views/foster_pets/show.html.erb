@@ -3,9 +3,6 @@
   <h3>Foster Agreement</h3>
 <p>
   <strong>Pet:</strong>
-  <% Pet.all.each do |pet| %>
-      <%= pet.name %>  <br>
-  <% end %>
   <%= (Pet.where id: @foster_pet.pet_id).first.name %><br>
   <%= image_tag((Pet.where id: @foster_pet.pet_id).first.image_url) %>
   </p>
