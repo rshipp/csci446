@@ -4,7 +4,7 @@ class PetsControllerTest < ActionController::TestCase
   setup do
     @pet = pets(:one)
     @update = {
-      name: 'one',
+      name: 'sixty',
       notes: 'notes',
       breed: 'cat',
       image_url: 'test.jpg',
@@ -52,7 +52,7 @@ class PetsControllerTest < ActionController::TestCase
 
   test "should destroy pet" do
     assert_difference('Pet.count', -1) do
-      delete :destroy, id: @pet
+      delete :destroy, id: @pet.id
     end
 
     assert_redirected_to pets_path

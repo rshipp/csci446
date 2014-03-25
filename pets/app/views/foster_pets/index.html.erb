@@ -13,7 +13,7 @@
   <tbody>
     <% @foster_pets.each do |foster_pet| %>
       <tr>
-        <td><%= foster_pet.pet %></td>
+        <td><%= (Pet.where id: foster_pet.pet_id).first.name %></td>
         <td><%= link_to 'Show', foster_pet %></td>
         <td><%= link_to 'Edit', edit_foster_pet_path(foster_pet) %></td>
         <td><%= link_to 'Destroy', foster_pet, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -25,7 +25,7 @@ class FosterPetsController < ApplicationController
   # POST /foster_pets
   # POST /foster_pets.json
   def create
-    pet = Pet.find(params[:pet_id])
+    pet = Pet.find(params[:foster_pet][:pet_id])
     @foster_pet = FosterPet.new(pet: pet)
 
     respond_to do |format|

@@ -19,7 +19,7 @@ class PetItemsControllerTest < ActionController::TestCase
   test "should create pet_item" do
     assert_difference('PetItem.count') do
       #post :create, pet_item: { pet_id: @pet_item.pet_id, pet_list_id: @pet_item.pet_list_id }
-      post :create, pet_id: pets(:one).id
+      post :create, pet_item: {pet_id: pets(:one).id}
     end
 
     #assert_redirected_to adopt_path

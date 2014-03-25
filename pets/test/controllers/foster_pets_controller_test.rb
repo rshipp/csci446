@@ -25,7 +25,6 @@ class FosterPetsControllerTest < ActionController::TestCase
   end
 
   test "should show foster_pet" do
-    puts @foster_pet
     get :show, id: @foster_pet
     assert_response :success
   end

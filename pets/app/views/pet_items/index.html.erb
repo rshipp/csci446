@@ -4,7 +4,6 @@
   <thead>
     <tr>
       <th>Pet</th>
-      <th>Pet list</th>
       <th></th>
       <th></th>
       <th></th>
@@ -14,8 +13,7 @@
   <tbody>
     <% @pet_items.each do |pet_item| %>
       <tr>
-        <td><%= pet_item.pet %></td>
-        <td><%= pet_item.pet_list %></td>
+        <td><%= (Pet.where id: pet_item.pet_id).first.name %></td>
         <td><%= link_to 'Show', pet_item %></td>
         <td><%= link_to 'Edit', edit_pet_item_path(pet_item) %></td>
         <td><%= link_to 'Destroy', pet_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>

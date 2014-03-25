@@ -56,6 +56,7 @@ class PetsController < ApplicationController
   # DELETE /pets/1
   # DELETE /pets/1.json
   def destroy
+    Pet.delete @pet
     @pet.destroy
     respond_to do |format|
       format.html { redirect_to pets_url }
