@@ -2,7 +2,7 @@
 
 <p>
   <strong>Pet:</strong>
-  <%= (Pet.where id: @pet_item.pet_id).first.name %>
+  <%= (Pet.find @pet_item.pet_id).name %>
 </p>
 
 <%= link_to 'Edit', edit_pet_item_path(@pet_item) %> |

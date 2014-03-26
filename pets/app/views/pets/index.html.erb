@@ -29,7 +29,7 @@
           <td><%= link_to 'Show', pet %></td>
           <td><%= link_to 'Edit', edit_pet_path(pet) %></td>
           <td><%= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          <td><%= button_to 'Add to list', pet_items_path(pet_id: pet), remote: true %></td>
+          <td><%= button_to 'Add to list', pet_items_path(pet_item: {pet_id: pet}), remote: true %></td>
         </tr>
       <% end %>
     <% end %>

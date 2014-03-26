@@ -1,5 +1,5 @@
 <% if pet_item == @current_item %>
-    <li id="current_item"><%= (Pet.where id: pet_item.pet_id).first.name %>
+    <li id="current_item"><%= (Pet.find pet_item.pet_id).name %>
 <% else %>
-    <li><%= link_to (Pet.where id: pet_item.pet_id).first.name, pet_item.pet %>
+    <li><%= link_to (Pet.find pet_item.pet_id).name, pet_item.pet %>
 <% end %>
