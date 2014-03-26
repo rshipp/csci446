@@ -1,6 +1,16 @@
 class FosterParentsController < ApplicationController
   before_action :set_foster_parent, only: [:show, :edit, :update, :destroy]
 
+  # For atom feed
+  def who_fostered
+    @latest_parent = FosterParent.order(:updated_at).last
+    if stale?(@latest_parent)
+      respond_to do |format|
+        format.atom
+      end
+    end
+  end
+
   # GET /foster_parents
   # GET /foster_parents.json
   def index

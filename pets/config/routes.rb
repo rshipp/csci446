@@ -1,14 +1,19 @@
 Pets::Application.routes.draw do
   resources :foster_pets
 
+  get "adopt/index"
+  resources :pets
+  resources :foster_parents do
+    collection do
+      get :who_fostered
+    end
+  end
   resources :foster_parents
 
   resources :pet_items
 
   resources :pet_lists
 
-  get "adopt/index"
-  resources :pets
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
