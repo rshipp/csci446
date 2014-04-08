@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140219141540) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "foster_parents", force: true do |t|
     t.string   "name"
     t.text     "address"
@@ -28,7 +31,7 @@ ActiveRecord::Schema.define(version: 20140219141540) do
     t.datetime "updated_at"
   end
 
-  add_index "foster_pets", ["pet_id"], name: "index_foster_pets_on_pet_id"
+  add_index "foster_pets", ["pet_id"], name: "index_foster_pets_on_pet_id", using: :btree
 
   create_table "pet_items", force: true do |t|
     t.integer  "pet_id"
@@ -37,8 +40,8 @@ ActiveRecord::Schema.define(version: 20140219141540) do
     t.datetime "updated_at"
   end
 
-  add_index "pet_items", ["pet_id"], name: "index_pet_items_on_pet_id"
-  add_index "pet_items", ["pet_list_id"], name: "index_pet_items_on_pet_list_id"
+  add_index "pet_items", ["pet_id"], name: "index_pet_items_on_pet_id", using: :btree
+  add_index "pet_items", ["pet_list_id"], name: "index_pet_items_on_pet_list_id", using: :btree
 
   create_table "pet_lists", force: true do |t|
     t.datetime "created_at"
